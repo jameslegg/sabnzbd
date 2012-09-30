@@ -24,8 +24,10 @@ If you just include recipe[sabnzbd] within the run_list for a role, things shoul
 
 If you want to add it to a Role that is also an option :-)
 
-Whatever node['sabnzbd']['gitref'] looks like will be installed on the node. This should be the latest stable release.
+Whatever node['sabnzbd']['git_ref'] looks like will be installed on the node. By default this is the latest stable release.
 If you want to track the 'develop' branch, or even a specific tag, then you can substitute that in and achieve the desired effect.
+
+In future we will support alternative install styles (node['sabnzbd']['install_style']) such as using Apt PPAs.
 
 ### Removal
 
