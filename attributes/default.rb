@@ -16,6 +16,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+default["sabnzbd"]["user"] = 'sabnzbd'
+default["sabnzbd"]["group"] = 'sabnzbd'
+default["sabnzbd"]["install_dir"] = "/srv/webapps/sabnzbd"
 default["sabnzbd"]["install_style"] = 'git'
 default["sabnzbd"]["git_url"] = 'https://github.com/sabnzbd/sabnzbd.git'
-default["sabnzbd"]["git_ref"] = 'master'
+default["sabnzbd"]["git_ref"] = 'e24aedc6acf1e477887a115b9a423838bdb19172'
