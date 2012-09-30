@@ -1,8 +1,11 @@
-# Timezone [![Build Status](https://secure.travis-ci.org/agh-cookbooks/timezone.png?branch=master)](http://travis-ci.org/agh-cookbooks/timezone)
+# sabnzbd [![Build Status](https://secure.travis-ci.org/agh-cookbooks/sabnzbd.png?branch=master)](http://travis-ci.org/agh-cookbooks/sabnzbd)
 
 ## Description
 
-Ensures that the 'tzdata' (or equivalent) package is installed, and then sets the timezone.
+Installs the 'sabnzbd' software onto a system, and configures the basics for you.
+sabnzbd is software which helps you download things from Usenet.
+
+* http://sabnzbd.org/
 
 ## Usage
 
@@ -14,17 +17,17 @@ If you just include recipe[timezone] within the run_list for a role, things shou
       name "Base",
       description "All of your systems are belong to me",
       "run_list": [
-        "recipe[timezone]"
+        "recipe[sabnzbd]"
       ]
     }
 
-Whatever node['timezone'] looks like will be configured on the node. Make sure to use what 'dpkg' considers correct,
-meaning you want 'Etc/UTC' rather than just 'UTC' otherwise chef-client will update it every time you converge.
+Whatever node['sabnzbd']['gitref'] looks like will be installed on the node. This should be the latest stable release.
+If you want to track the 'develop' branch, or even a specific tag, then you can substitute that in and achieve the desired effect.
 
 ### Removal
 
-If for some reason you want to stop using the 'timezone' recipe, just remove it.
-Any changes it made on your behalf will not be reversed, but it will stop managing system timezone.
+If for some reason you want to stop using the 'sabnzbd' recipe, then use recipe[sabnzbd::purge].
+Any changes the recipe made will be removed from your system, then you can remove from run_list.
 
 ## License and Author
 
