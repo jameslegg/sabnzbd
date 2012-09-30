@@ -16,4 +16,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-default["sabnzbd"]["gitref"] = 'master'
+default["sabnzbd"]["install_style"] = 'git'
+default["sabnzbd"]["git_url"] = 'https://github.com/sabnzbd/sabnzbd.git'
+default["sabnzbd"]["git_ref"] = 'master'
