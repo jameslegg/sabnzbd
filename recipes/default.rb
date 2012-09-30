@@ -16,3 +16,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+user node['sabnzbd']['user'] do
+  shell '/bin/false'
+  comment 'Web Application - SABnzbd'
+  home node['sabnzbd']['install_dir']
+  supports :manage_home => false
+  system true
+end
+
+directory node['sabnzbd']['install_dir'] do
+  mode 0755
+  owner node['sabnzbd']['user']
+  group node['sabnzbd']['group']
+  recursive true
+end
+
+git node['sabnzbd']['install_dir'] do
+  repository node['sabnzbd']['git_url']
+  revision node['sabnzbd']['git_ref']                                   
+  action :sync                                     
+  user node['sabnzbd']['user']                 
+  group node['sabnzbd']['group']                      
+end
