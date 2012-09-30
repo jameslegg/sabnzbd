@@ -16,13 +16,11 @@ If you just include recipe[sabnzbd] within the run_list for a role, things shoul
 
     {
       name "Base",
-      description "All of your systems are belong to me",
+      description "All of your systems are belong to Chef",
       "run_list": [
         "recipe[sabnzbd]"
       ]
     }
-
-If you want to add it to a Role that is also an option :-)
 
 Whatever node['sabnzbd']['git_ref'] looks like will be installed on the node. By default this is the latest stable release.
 If you want to track the 'develop' branch, or even a specific tag, then you can substitute that in and achieve the desired effect.
