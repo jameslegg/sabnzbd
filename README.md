@@ -3,6 +3,7 @@
 ## Description
 
 Installs the 'sabnzbd' software onto a system, and configures the basics for you.
+
 sabnzbd is software which helps you download things from Usenet.
 
 * http://sabnzbd.org/
@@ -11,7 +12,7 @@ sabnzbd is software which helps you download things from Usenet.
 
 ### default recipe
 
-If you just include recipe[timezone] within the run_list for a role, things should just work -
+If you just include recipe[sabnzbd] within the run_list for a role, things should just work -
 
     {
       name "Base",
@@ -20,6 +21,8 @@ If you just include recipe[timezone] within the run_list for a role, things shou
         "recipe[sabnzbd]"
       ]
     }
+
+If you want to add it to a Role that is also an option :-)
 
 Whatever node['sabnzbd']['gitref'] looks like will be installed on the node. This should be the latest stable release.
 If you want to track the 'develop' branch, or even a specific tag, then you can substitute that in and achieve the desired effect.
