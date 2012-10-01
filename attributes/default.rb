@@ -18,7 +18,25 @@
 #
 default["sabnzbd"]["user"] = 'sabnzbd'
 default["sabnzbd"]["group"] = 'sabnzbd'
-default["sabnzbd"]["install_dir"] = "/srv/webapps/sabnzbd"
+
+default["sabnzbd"]["listen_address"] = '0.0.0.0'
+default["sabnzbd"]["listen_port"] = '8080'
+
+default["sabnzbd"]["install_dir"] = '/srv/apps/sabnzbd'
+default["sabnzbd"]["config_dir"] = '/etc/sabnzbd'
+default["sabnzbd"]["data_dir"] = '/media/sabnzbd'
+
+default["sabnzbd"]["run_dir"] = '/var/run/sabnzbd'
+default["sabnzbd"]["log_dir"] = '/var/log/sabnzbd'
+
+# Valid Options: 
+#  bluepill
+default["sabnzbd"]["init_style"] = 'bluepill'
+
+# Valid Options: 
+#  git
 default["sabnzbd"]["install_style"] = 'git'
+
+# Git Options
 default["sabnzbd"]["git_url"] = 'https://github.com/sabnzbd/sabnzbd.git'
 default["sabnzbd"]["git_ref"] = 'e24aedc6acf1e477887a115b9a423838bdb19172'
