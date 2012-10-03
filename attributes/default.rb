@@ -39,4 +39,4 @@ default["sabnzbd"]["install_style"] = 'git'
 
 # Git Options
 default["sabnzbd"]["git_url"] = 'https://github.com/sabnzbd/sabnzbd.git'
-default["sabnzbd"]["git_ref"] = 'e24aedc6acf1e477887a115b9a423838bdb19172'
+default["sabnzbd"]["git_ref"] = '10b740374895704bde1c7fb99995be6e9c913d8d'
