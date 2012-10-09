@@ -20,9 +20,10 @@
 package "par2"
 package "unrar"
 package "python-yenc"
+package "python-cheetah"
 package "python-openssl"			# Package contains --
-package "coreutils"				#  nice
-package "util-linux"				#  ionice
+package "coreutils"				    #  nice
+package "util-linux"				  #  ionice
 
 user node['sabnzbd']['user'] do
   shell '/bin/bash'
