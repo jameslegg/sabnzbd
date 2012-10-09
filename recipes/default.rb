@@ -19,6 +19,7 @@
 
 package "par2"
 package "unrar"
+package "unzip"
 package "python-yenc"
 package "python-cheetah"
 package "python-openssl"			# Package contains --
