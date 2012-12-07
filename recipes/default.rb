@@ -17,10 +17,11 @@
 # limitations under the License.
 #
 
+include_recipe "git"
+
 package "par2"
 package "unrar"
 package "unzip"
-package "git"
 package "python-yenc"
 package "python-cheetah"
 package "python-openssl"			# Package contains --
