@@ -36,11 +36,11 @@ user node['sabnzbd']['user'] do
 end
 
 app_dirs = [ 
-  "#{node['sabnzbd']['install_dir']}", 
-  "#{node['sabnzbd']['config_dir']}", 
-  "#{node['sabnzbd']['run_dir']}", 
-  "#{node['sabnzbd']['log_dir']}"
-  ]
+  node['sabnzbd']['install_dir'], 
+  node['sabnzbd']['config_dir'], 
+  node['sabnzbd']['run_dir'], 
+  node['sabnzbd']['log_dir']
+]
 
 app_dirs.each do |x|
   directory x do
