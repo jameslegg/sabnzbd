@@ -87,7 +87,7 @@ when 'bluepill'
   end
 
   bluepill_service "sabnzbd" do
-    action [:enable, :load, :start]
+    action [:enable, :load, :start, :restart]
   end
 
 else

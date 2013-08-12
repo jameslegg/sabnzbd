@@ -10,13 +10,15 @@ Bluepill.application("sabnzbd") do |app|
     proc.gid = "<%= node["sabnzbd"]["group"] %>"
 
     proc.working_dir = "<%= node["sabnzbd"]["install_dir"] %>"
-    proc.start_command = "python SABnzbd.py -s <%= node["sabnzbd"]["listen_address"] %>:<%= node["sabnzbd"]["listen_port"] %> -f <%= node["sabnzbd"]["config_dir"] %>/sabnzbd.ini -b 0 -l 1"
-
-    # We're letting Bluepill daemonize for us
-    proc.daemonize = true
+    proc.start_command = "python SABnzbd.py -s <%= node["sabnzbd"]["listen_address"] %>:<%= node["sabnzbd"]["listen_port"] %> -d -f <%= node["sabnzbd"]["config_dir"] %>/sabnzbd.ini -b 0 -l 1"
 
     # Logging
     proc.stdout = proc.stderr = "<%= node["sabnzbd"]["log_dir"] %>/sabnzbd.log"
+
+    #Startup Grace
+    proc.start_grace_time = 30.seconds
+    proc.stop_grace_time = 60.seconds
+    proc.restart_grace_time = 90.seconds
 
     # Process Monitoring
     proc.checks :cpu_usage, :every => 30.seconds, :below => 85, :times => 10        
