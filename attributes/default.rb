@@ -20,7 +20,7 @@ default["sabnzbd"]["user"] = 'sabnzbd'
 default["sabnzbd"]["group"] = 'sabnzbd'
 
 default["sabnzbd"]["listen_address"] = '0.0.0.0'
-default["sabnzbd"]["listen_port"] = '8080'
+default["sabnzbd"]["listen_port"] = '9090'
 
 default["sabnzbd"]["install_dir"] = '/srv/apps/sabnzbd'
 default["sabnzbd"]["config_dir"] = '/etc/sabnzbd'
